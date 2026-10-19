@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>다다맘</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<!-- dadamom.co.kr → 다다맘 앱. 앱 주소는 옮기지 않는다 (육아 기록이 브라우저 저장소에 있음).
+     경로·?from=·#/p/<글> 을 그대로 넘긴다. 경로가 없거나 모르는 경로면 웹 커뮤니티, from 이 없으면 from=domain. -->
+<script>
+(function(){
+  var APP = 'https://adultryun188-lang.github.io/dadamom-app/';
+  var PAGES = { '': 'community.html', 'community.html': 'community.html', 'index.html': 'index.html', 'delete-account.html': 'delete-account.html' };
+  var path = location.pathname.replace(/^\/+/, '');
+  var page = Object.prototype.hasOwnProperty.call(PAGES, path) ? PAGES[path] : 'community.html';
+  var q = location.search;
+  if(!/[?&]from=/.test(q)) q = (q ? q + '&' : '?') + 'from=domain';
+  location.replace(APP + page + q + location.hash);
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0;url=https://adultryun188-lang.github.io/dadamom-app/community.html?from=domain"></noscript>
+<p style="font-family:sans-serif;padding:24px">다다맘으로 이동 중… 이동하지 않으면 <a href="https://adultryun188-lang.github.io/dadamom-app/community.html?from=domain">여기</a>를 누르세요.</p>
+</html>
